@@ -8,8 +8,8 @@ export class UserRepository extends Repository<User> {
   }
 
   /* Get user details by user name*/
-  async getUserDetailsByUserId(username: string): Promise<User> {
-    const user = await this.findOne({ userName: username });
+  async getUserDetailsByUserId(userId: number): Promise<User> {
+    const user = await this.findOne({ id: userId });
     if (!user) {
       throw new NotFoundException('User Not Found');
     }

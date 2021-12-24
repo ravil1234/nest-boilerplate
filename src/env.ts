@@ -34,7 +34,7 @@ export const env = {
     output: getOsEnvOptional('LOG_OUTPUT'),
     path: getOsPath('LOG_PATH'),
     request: toBool(getOsEnvOptional('LOG_REQUEST') || 'true'),
-    request_body: toBool(getOsEnvOptional('LOG_REQUEST_BODY') || 'false'),
+    requestBody: toBool(getOsEnvOptional('LOG_REQUEST_BODY') || 'false'),
     response: toBool(getOsEnvOptional('LOG_RESPONSE') || 'false'),
     error: toBool(getOsEnvOptional('LOG_ERROR') || 'false'),
   },
@@ -46,5 +46,10 @@ export const env = {
     port: toNumber(getOsEnv('DB_PORT')),
     database: getOsEnv('DATABASE'),
     synchronize: toBool(getOsEnv('SYNCHRONIZE')),
+  },
+  jwt: {
+    jwtSecret: getOsEnv('JWT_SECRET'),
+    jwtRefresh: getOsEnv('JWT_REFRESH'),
+    expirationTime: getOsEnv('JWT_EXPIRES_IN'),
   },
 };

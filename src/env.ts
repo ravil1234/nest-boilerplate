@@ -48,8 +48,8 @@ export const env = {
     synchronize: toBool(getOsEnv('SYNCHRONIZE')),
   },
   jwt: {
-    jwtSecret: getOsEnv('JWT_SECRET'),
-    jwtRefresh: getOsEnv('JWT_REFRESH'),
+    accessKey: getOsEnv('JWT_SECRET'),
+    refreshKey: getOsEnv('JWT_REFRESH'),
     expirationTime: getOsEnv('JWT_EXPIRES_IN'),
   },
 };

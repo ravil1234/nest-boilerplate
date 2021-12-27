@@ -12,4 +12,7 @@ export class User extends BaseEntity {
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: string;
+
+  @Column()
+  refreshToken: string;
 }

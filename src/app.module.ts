@@ -3,6 +3,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { WinstonModule } from 'nest-winston';
 import { AdminModule } from './api/admin/admin.module';
+import { RedisCacheModule } from './api/redis/redis.module';
 import { UserModule } from './api/user/user.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -15,6 +16,7 @@ import { winstonOptions } from './libs/logger/logger';
     WinstonModule.forRoot(winstonOptions),
     UserModule,
     AdminModule,
+    RedisCacheModule,
   ],
   controllers: [AppController],
   providers: [

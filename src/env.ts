@@ -52,4 +52,9 @@ export const env = {
     refreshKey: getOsEnv('JWT_REFRESH'),
     expirationTime: getOsEnv('JWT_EXPIRES_IN'),
   },
+  redis: {
+    host: getOsEnv('REDIS_HOST'),
+    port: getOsEnv('REDIS_PORT'),
+    ttl: getOsEnv('REDIS_TTL'),
+  },
 };

@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { typeOrmConfig } from './database/typeorm.config';
 import { winstonOptions } from './libs/logger/logger';
+import { SocketGateway } from './websocket/socket.gateway';
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
@@ -15,6 +16,6 @@ import { winstonOptions } from './libs/logger/logger';
     AdminModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, SocketGateway],
 })
 export class AppModule {}
